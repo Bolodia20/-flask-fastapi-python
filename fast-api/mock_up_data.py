@@ -1,7 +1,7 @@
-from interfaces import HealthStatuses
+from interfaces import HealthStatuses, HealthInfoList, User, FakeUsers
 
 
-mock_up_health_data = [
+mock_up_health_data: HealthInfoList = [
     {"id": 1, "name": "health one", "status": HealthStatuses.BAD},
     {"id": 2, "name": "health two", "status": HealthStatuses.NORMAL},
     {"id": 3, "name": "health three", "status": HealthStatuses.BAD},
@@ -9,16 +9,15 @@ mock_up_health_data = [
     {"id": 5, "name": "health 5", "status": HealthStatuses.GOOD},
 ]
 
-my_user = {
+my_user: User = {
     "name": "Volodya",
     "surname": "Diachuk",
     "email": "bolodian@gmail.com",
-    "age": 23,
     "password": "1122",
 }
 
 
-fake_users = {
+fake_users: FakeUsers = {
     "john": {
         "username": "john",
         "surname": "Doe",

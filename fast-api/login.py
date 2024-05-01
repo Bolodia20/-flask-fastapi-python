@@ -19,7 +19,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 @login_router.post("/login/")
 async def login(
     form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
-) -> Token:
+):
     user = authenticate_user(fake_users, form_data.username, form_data.password)
     if not user:
         raise HTTPException(
