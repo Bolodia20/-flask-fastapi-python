@@ -1,4 +1,4 @@
-from interfaces import User
+from interfaces import User, FakeUsers
 from datetime import datetime, timedelta, timezone
 from jose import jwt
 from consts import SECRET_KEY, ALGORITHM
@@ -29,7 +29,7 @@ def get_user(db, username: str):
         return User(**user_dict)
 
 
-def authenticate_user(fake_db, username: str, password: str):
+def authenticate_user(fake_db: FakeUsers, username: str, password: str):
     user = get_user(fake_db, username)
     if not user:
         return False

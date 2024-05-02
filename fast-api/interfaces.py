@@ -2,7 +2,8 @@ import uuid
 from enum import Enum
 from pydantic import BaseModel
 from pydantic_settings import BaseSettings
-from typing import List, TypedDict, Dict
+from typing import List, Dict
+from typing_extensions import TypedDict
 
 
 class HealthStatuses(str, Enum):
@@ -23,7 +24,9 @@ class HealthInfo(HealthInfoBase):
 
 HealthInfoList = List[HealthInfo]
 
-HealthInfoListResponse = TypedDict("HealthInfoListResponse", {"data": HealthInfoList})
+
+class HealthInfoListResponse(TypedDict):
+    data: HealthInfoList
 
 
 class User(BaseModel):
