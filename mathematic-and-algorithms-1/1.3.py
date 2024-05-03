@@ -1,3 +1,6 @@
+import time
+
+
 def find_index_of_minimum(vector, start=0):
     minimum, index_of_minimum = vector[start], start
     for index, value in enumerate(vector[start + 1 :]):
@@ -23,4 +26,11 @@ def selection_sort(list):
     return sorted_list
 
 
-selection_sort(a)
+# Measure execution time
+start_time = time.time()
+sorted_list = selection_sort(a)
+end_time = time.time()
+
+# Calculate the elapsed time
+elapsed_time = end_time - start_time
+print(f"Execution time: {elapsed_time} seconds")
