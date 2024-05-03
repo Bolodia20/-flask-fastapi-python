@@ -1,15 +1,11 @@
+from array import array
+
 a1 = [[2, 5, 2], [1, 0, -2], [3, 1, 1]]
 
 b1 = [[-2, 1, 0], [-2, 2, 1], [0, 0, 3]]
 
 
 def dot(a, b):
-    print(a)
-    print(b)
-    print(len(a[0]))
-    print(len(b))
-    print("-----")
-
     if len(a[0]) != len(b):
         return "error"
 
